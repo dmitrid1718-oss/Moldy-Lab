@@ -58,4 +58,5 @@ canvas.addEventListener('wheel',e=>{if(!microscope)return;e.preventDefault();sco
 canvas.addEventListener('pointerdown',e=>{pointer=true;lastPX=e.clientX;lastPY=e.clientY;canvas.setPointerCapture?.(e.pointerId);if(!microscope)seedAt(e)});
 canvas.addEventListener('pointermove',e=>{if(!pointer)return;if(microscope){const b=canvas.getBoundingClientRect();const factor=W/Math.max(1,b.width);panX=Math.max(-.9,Math.min(.9,panX+(e.clientX-lastPX)*factor/R));panY=Math.max(-.9,Math.min(.9,panY+(e.clientY-lastPY)*factor/R));lastPX=e.clientX;lastPY=e.clientY}else if(Math.random()<.18)seedAt(e)});
 canvas.addEventListener('pointerup',()=>pointer=false);canvas.addEventListener('pointercancel',()=>pointer=false);window.addEventListener('pointerup',()=>pointer=false);updateScope();render()})();
-</script></body></html>
+</script><script defer src="/ui-visits.js"></script>
+</body></html>
